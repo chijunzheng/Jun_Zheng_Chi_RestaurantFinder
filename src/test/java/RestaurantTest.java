@@ -7,6 +7,8 @@ import org.mockito.Mockito;
 import org.mockito.junit.jupiter.MockitoExtension;
 
 import java.time.LocalTime;
+import java.util.ArrayList;
+import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -75,4 +77,16 @@ class RestaurantTest {
                 ()->restaurant.removeFromMenu("French fries"));
     }
     //<<<<<<<<<<<<<<<<<<<<<<<MENU>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+    //This is the part 3 test cases for calculating the total price of menu items.
+    @Test
+    public void adding_individual_price_of_menu_items_will_give_a_total_price(){
+        List<String> orderedMenuItems= new ArrayList<>();
+        orderedMenuItems.add("Sweet corn soup");
+        orderedMenuItems.add("Vegetable lasagne");
+        int sum = restaurant.getTotalPrice(orderedMenuItems);
+        assertEquals(119+269,sum);
+    }
+
+
 }
