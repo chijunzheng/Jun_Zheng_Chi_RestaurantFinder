@@ -67,8 +67,13 @@ public class Restaurant {
         return name;
     }
 
+    //part 3 task: get total price from menu items
     public int getTotalPrice(List<String> orderedMenuItems){
-        return 0;
+        int totalPrice=0;
+        for(String item:orderedMenuItems){
+            totalPrice = totalPrice + findItemByName(item).getPrice();
+        }
+        return totalPrice;
     }
 
 }

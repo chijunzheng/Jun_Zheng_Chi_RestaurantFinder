@@ -88,5 +88,16 @@ class RestaurantTest {
         assertEquals(119+269,sum);
     }
 
+    @Test
+    public void adding_individual_price_of_menu_items_will_give_a_total_price_test_2(){
+        restaurant.addToMenu("Sizzling brownie",319);
+        restaurant.addToMenu("French fries",0);
+        List<String> orderedMenuItems= new ArrayList<>();
+        orderedMenuItems.add("Sizzling brownie");
+        orderedMenuItems.add("French fries");
+        int sum = restaurant.getTotalPrice(orderedMenuItems);
+        assertEquals(319+0,sum);
+    }
+
 
 }
